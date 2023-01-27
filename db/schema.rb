@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_26_212044) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_27_110433) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "group_payments", force: :cascade do |t|
+  create_table "group_payments", id: false, force: :cascade do |t|
     t.bigint "group_id", null: false
     t.bigint "payment_id", null: false
     t.datetime "created_at", null: false
