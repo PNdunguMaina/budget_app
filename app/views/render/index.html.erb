@@ -1,7 +1,14 @@
 <main class="container">
   <div class="row text-center justify-content-center">
-    <div class="col">
+    <% if user_signed_in? %> 
+      <div> Welcome <%= current_user.email %> 
+      <div class="col">
       <h1 class="display-4">Hello World!</h1>
     </div>
+    </div> 
+      <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
+    <% else %>
+      <%= link_to "Sign in", new_user_session_path %> 
+    <% end %>
   </div>
 </main>
