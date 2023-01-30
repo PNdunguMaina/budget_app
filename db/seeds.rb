@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # users
-users = User.create([{name: 'John Doe'}, {name: 'Felix Oduor'}])
+users = User.create([{name: 'John Doe', email: 'johndoe@example.com', password: 'pattohoh'}, {name: 'Felix Oduor', email: 'felixoduor@example.com', password: 'pattohoh'}])
 
 # payments
 payment_1 = Payment.create(name: 'YTFGJKBVGFHJ876FBNUYTYFV', amount: 52, author_id: 2)
