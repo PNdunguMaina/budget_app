@@ -1,10 +1,27 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @group %>
-
 <div>
-  <%= link_to "Edit this group", edit_group_path(@group) %> |
-  <%= link_to "Back to groups", groups_path %>
-
-  <%= button_to "Destroy this group", @group, method: :delete %>
+    <div id="payments">
+      <% @payments.each do |payment| %>
+      <%= link_to "/categories/#{@category.id}/payments/#{payment.id}", class: "text-decoration-none" do %>
+      <div class="container border-bottom border-light border-4 mt-3">
+        <div><p class = "fw-light text-info fs-5">Transaction <%= payment.name %></p></div>
+        <div class="d-flex align-items-baseline gap-2 ">
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+        <p><%= payment.created_at.to_date.strftime('%Y %b %d') %> at <%= payment.created_at.to_time.strftime('%H:%M:%S') %></p>
+        </div>
+       </div>
+      <% end %>
+  <% end %>
+</div>
+  </div>
+  <div class="d-flex justify-content-between">
+    <p class = "fw-bold text-secondary fs-5">TOTAL PAYMENT</p>
+    <p class = "fw-bold text-dark fs-5">$ 0</p>
+  </div>
+  <div class="my-5 d-flex justify-content-center">
+    <%= link_to "New transaction", new_group_payment_path(@group), class: "btn btn-primary" %>
+  </div>
+  <div>
+    <%= link_to "Back to groups", groups_path %>
+  </div>
+  </div>
 </div>
