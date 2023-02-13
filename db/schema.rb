@@ -14,7 +14,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_28_213214) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "group_payments", id: false, force: :cascade do |t|
+  create_table "group_payments", force: :cascade do |t|
     t.bigint "group_id", null: false
     t.bigint "payment_id", null: false
     t.datetime "created_at", null: false
