@@ -16,4 +16,4 @@
 @groups = Group.create([{name: 'McDonalds', icon: 'https://www.mcdonalds.com/content/dam/sites/usa/nfl/icons/arches-logo_108x108.jpg', author_id: 1}, {name: 'BrookSide', icon: 'https://www.brookside.co.ke/images/logo.png', author_id: 1}])
 
 # GroupPayments
-@group_payment = GroupPayment.create(group: @groups.id, payment: @payments.id)
+# @group_payment = GroupPayment.create(group: @groups.id, payment: @payments.id)

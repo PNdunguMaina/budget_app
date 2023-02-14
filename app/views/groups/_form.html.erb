@@ -10,8 +10,18 @@
       </ul>
     </div>
   <% end %>
+  <div class="field">
+    <%= form.label "Name" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Icon" %>
+    <%= form.text_field :icon %>
+  </div>
 
   <div>
+    
     <%= form.submit %>
   </div>
 <% end %>
