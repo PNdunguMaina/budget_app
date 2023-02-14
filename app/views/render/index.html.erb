@@ -8,9 +8,17 @@
     </div> 
       <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
     <% else %>
-      <h1>PaySafe</h1>
-      <%= link_to "Sign in", new_user_session_path %>
-      <%= link_to "Register", new_user_registration_path %> 
+    <div class="max-vh-100 position-absolute top-50 start-50 translate-middle">
+      <div class="py-5">
+        <h1 class="fw-bolder mb-5 text-center">PaySafe<h1>
+      </div>
+      <div class="">
+        <%= link_to "LOG IN", new_user_session_path, class: "btn btn-primary text-white mt-5 session-btn" %>
+      </div>
+      <div class="">
+        <%= link_to "SIGN UP", new_user_registration_path, class: "btn session-btn register-btn" %>
+      </div>
+    </div>
     <% end %>
   </div>
 </main>

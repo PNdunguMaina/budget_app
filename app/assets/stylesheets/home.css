@@ -1,0 +1,27 @@
+/* splash screen page */
+body {
+  background-color: hsl(0, 0%, 95%);
+}
+
+.session-btn {
+  display: block;
+  width: 95vw;
+  background-color: #3778c2;
+  border: none;
+  text-align: center;
+  margin: auto;
+  border-radius: 0;
+  padding: 20px 0;
+  font-weight: 300;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+}
+
+.register-btn {
+  background-color: inherit;
+  color: #434b54
+}
+
+.register-btn:hover {
+    background-color: rgb(92, 184, 92);
+}
