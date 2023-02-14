@@ -4,13 +4,12 @@ class GroupsController < ApplicationController
   # GET /groups or /groups.json
   def index
     @groups = current_user.groups.order(id: :asc)
+    @group = @groups.find_by_id(params[:id])
   end
 
   # GET /groups/1 or /groups/1.json
   def show
-    @group = Group.find(params[:id])
-    @author = @group.author
-    @payments = @group.payments
+    @payments = @group.payments.order(created_at: :desc)
   end
 
   # GET /groups/new
@@ -25,6 +24,7 @@ class GroupsController < ApplicationController
   # POST /groups or /groups.json
   def create
     @group = Group.new(group_params)
+    @group.author = current_user
 
     respond_to do |format|
       if @group.save

@@ -13,6 +13,15 @@ class PaymentsController < ApplicationController
   # GET /payments/new
   def new
     @payment = Payment.new
+    @groups = Group.all
+    @group = Group.find(params[:group_id])
+
+    if @group.author == current_user
+      @payment = Payment.new
+    else
+      flash[:alert] = 'You can only create expenses from your categories'
+      redirect_to groups_path
+    end
   end
 
   # GET /payments/1/edit
@@ -22,10 +31,14 @@ class PaymentsController < ApplicationController
   # POST /payments or /payments.json
   def create
     @payment = Payment.new(payment_params)
+    @payment.author = current_user
+    @groups = Group.where(id: group_params[:groups])
+    @group = Group.find(params[:group_id])
+    @payment.groups << @groups
 
     respond_to do |format|
       if @payment.save
-        format.html { redirect_to payment_url(@payment), notice: "Payment was successfully created." }
+        format.html { redirect_to group_payment_url(@payment), notice: "Payment was successfully created." }
         format.json { render :show, status: :created, location: @payment }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -63,8 +76,12 @@ class PaymentsController < ApplicationController
       @payment = Payment.find(params[:id])
     end
 
+     def group_params
+      params.require(:payment).permit(groups: [])
+    end
+
     # Only allow a list of trusted parameters through.
     def payment_params
-      params.fetch(:payment, {})
+      params.require(:payment).permit(:name, :amount)
     end
 end
