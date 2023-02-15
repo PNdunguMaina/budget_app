@@ -1,13 +1,5 @@
 <main class="container">
   <div class="row text-center justify-content-center">
-    <% if user_signed_in? %> 
-      <div> Welcome <%= current_user.email %> 
-      <div class="col">
-      <h1 class="display-4">Hello World!</h1>
-    </div>
-    </div> 
-      <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
-    <% else %>
     <div class="max-vh-100 position-absolute top-50 start-50 translate-middle">
       <div class="py-5">
         <h1 class="fw-bolder mb-5 text-center">PaySafe<h1>
@@ -19,6 +11,5 @@
         <%= link_to "SIGN UP", new_user_registration_path, class: "btn session-btn register-btn" %>
       </div>
     </div>
-    <% end %>
   </div>
 </main>

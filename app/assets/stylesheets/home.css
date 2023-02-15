@@ -26,3 +26,8 @@ body {
 .register-btn:hover {
     background-color: rgb(92, 184, 92);
 }
+
+img {
+  max-height: 10rem;
+  max-width: 10rem;
+}
