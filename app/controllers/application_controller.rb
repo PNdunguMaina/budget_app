@@ -8,6 +8,9 @@ class ApplicationController < ActionController::Base
       render_index_path
     end
 
+    def after_sign_in_path_for(_resource)
+      groups_path
+    end
 
     protected
     def update_allowed_parameters
