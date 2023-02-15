@@ -10,6 +10,7 @@ class GroupsController < ApplicationController
   # GET /groups/1 or /groups/1.json
   def show
     @payments = @group.payments.order(created_at: :desc)
+    @total = @payments.sum(:amount)
   end
 
   # GET /groups/new
