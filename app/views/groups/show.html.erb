@@ -1,5 +1,4 @@
 <div>
-<h1>Payments</h1>
     <div id="payments">
       <% @payments.each do |payment| %>
       <%= link_to "/groups/#{@group.id}/payments/#{payment.id}", class: "text-decoration-none" do %>
@@ -9,14 +8,18 @@
         <i class="fa fa-calendar" aria-hidden="true"></i>
         <p><%= payment.created_at.to_date.strftime('%Y %b %d') %> at <%= payment.created_at.to_time.strftime('%H:%M:%S') %></p>
         </div>
+        <div>
+          <p class = "fw-bold text-dark fs-5">$ <%= payment.amount %></p>
+        </div>
+         
        </div>
       <% end %>
   <% end %>
 </div>
   </div>
-  <div class="d-flex justify-content-between">
+  <div class="d-flex justify-content-between container">
     <p class = "fw-bold text-secondary fs-5">TOTAL PAYMENT</p>
-    <p class = "fw-bold text-dark fs-5">$ 0</p>
+    <p class = "fw-bold text-dark fs-5">$ <%= @total %></p>
   </div>
   <div class="my-5 d-flex justify-content-center">
     <%= link_to "New transaction", new_group_payment_path(@group), class: "btn btn-primary" %>

@@ -1,0 +1,28 @@
+.top-nav {
+    background-color: #3778c2;
+}
+
+.fa-search {
+    font-weight: 400;
+}
+
+.field-input {
+    border: none;
+    outline: none;
+    width: 100vw;
+    padding: 1rem 1.5rem;
+    font-size: 1.8rem;
+}
+
+.field-submit {
+    border: none;
+    outline: none;
+    padding: 1rem 0;
+    font-size: 1.8rem;
+    background-color: #3778c2;
+    color: #fff;
+}
+
+.forget-btn {
+
+}

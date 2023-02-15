@@ -9,7 +9,7 @@
               <p class = "fw-light text-secondary"><%= category.created_at.to_date.strftime('%Y %b %d') %></p>
             </div>
             <div class="col d-flex justify-content-end">
-              <p class = "fw-bold text-dark fs-5">$<%= 0 %></p>
+              <p class = "fw-bold text-dark fs-5">$<%= category.payments.sum(:amount) %></p>
             </div>
           </div>
         </div>
