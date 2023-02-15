@@ -1,9 +1,4 @@
-<h1>New payment</h1>
+<%= render "nav", title: "NEW PAYMENT", info: '' %>
 
 <%= render "form", payment: @payment, groups: @groups, group: @groups %>
 
-<br>
-
-<div>
-  <%= link_to "Back to payments", groups_path %>
-</div>

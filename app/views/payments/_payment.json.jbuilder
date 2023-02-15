@@ -1,2 +1,2 @@
 json.extract! payment, :id, :created_at, :updated_at
-json.url payment_url(payment, format: :json)
+json.url group_payment_url(payment, format: :json)

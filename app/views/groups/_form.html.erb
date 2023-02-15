@@ -10,18 +10,20 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= form.label "Name" %>
-    <%= form.text_field :name %>
-  </div>
+  <div class="container my-5">
+    <div class="field form-group">
+      <%= form.label "Name", class: "col-sm-2 col-form-label" %>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= form.label "Icon" %>
-    <%= form.text_field :icon %>
-  </div>
+    <div class="field">
+      <%= form.label "Icon", class: "col-sm-2 col-form-label" %>
+      <%= form.text_field :icon, class: "form-control" %>
+    </div>
 
-  <div>
-    
-    <%= form.submit %>
+    <div class="mt-5 d-flex justify-content-center">
+      
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>

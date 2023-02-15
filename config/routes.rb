@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   resources :groups, only: [:index, :show, :new, :create] do
-    resources :payments
+    resources :payments, only: [:new, :create]
   end
  
   

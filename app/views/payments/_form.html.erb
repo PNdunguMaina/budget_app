@@ -10,35 +10,36 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <div>
-      <%= form.label :Name %>
+<div class="container">
+  <div class="form-group">
+    <div class="col-sm-10">
+      <%= form.label :Name, class: "col-sm-2 col-form-label" %>
     </div>
-    <div>
-      <%= form.text_field :name %>
+    <div class="col-sm-10">
+      <%= form.text_field :name, class: "form-control"  %>
     </div>
   </div>
 
    <div>
-    <div>
-      <%= form.label :Amount %>
+    <div class="form-group">
+      <%= form.label :Amount, class: "col-sm-2 col-form-label" %>
     </div>
-    <div>
-      <%= form.number_field :amount %>
+    <div class="col-sm-10">
+      <%= form.number_field :amount, class: "form-control" %>
     </div>
   </div>
 
   <div>
-    <div>
-      <%= form.label :Groups %>
+    <div class="form-group">
+      <%= form.label :Groups, class: "col-sm-2 col-form-label" %>
     </div>
-    <div>
+    <div class="col-sm-10">
       <%= form.collection_select(:groups, current_user.groups, :id, :name, {}, { multiple: true, size: 7, class: "form-select" }) %>
     </div>
   </div>
 
-  <div>
+  <div class="mt-5 d-flex justify-content-center">
     <%= form.submit %>
+  </div>
   </div>
 <% end %>
