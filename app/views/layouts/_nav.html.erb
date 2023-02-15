@@ -13,16 +13,20 @@
     </div>
     <div class="col justify-content-end d-flex">
    <div>
-        <i class="fa fa-search fs-1 text-white"></i>
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-btn sign-out-btn" %> 
     </div>
   	
     </div>
   </div>
   </div>
-  <div class="container d-flex justify-content-end gap-3 mt-3 mb-3">
-   
-    <button>Most Recent</button>
-    <button>Most Ancient</button>
+  
+  <div class="d-flex justify-content-around mt-3 mb-3">
+   <div class="d-flex  align-items-center text-white fs-3 fw-bold"> Welcome, <%= current_user.name %> </div>
+   <div class="gap-3 d-flex">
+      <button class="nav-btn">Most Recent</button>
+      <button class="nav-btn">Most Ancient</button>
+    </div>
+    
   </div>
-  </div>
+ 
   </div>
