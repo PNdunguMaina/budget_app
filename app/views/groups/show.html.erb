@@ -1,31 +1,39 @@
+<%= render "shared/nav", title: "DETAILS", info: '' %>
 <div>
     <div id="payments">
+      <div class="d-flex container align-items-center border-bottom border-light border-4 mt-3 mb-5 pb-5">
+        <div id="img-div" class="col">
+          <img src=<%= @group.icon%> alt=<%= @group.name%> />
+        </div>
+        <div class="col">
+          <p class = "fw-bold text-secondary fs-5 opacity-75"><%= @group.name %><p>
+        </div>
+      </div>
+   
       <% @payments.each do |payment| %>
-      <%= link_to "/groups/#{@group.id}/payments/#{payment.id}", class: "text-decoration-none" do %>
       <div class="container border-bottom border-light border-4 mt-3">
-        <div><p class = "fw-light text-info fs-5">Transaction <%= payment.name %></p></div>
+        <div class="d-flex justify-content-between align-items-center">
+          <p class = "fw-light text-info fs-5">Transaction <%= payment.name %></p>
+         
+          <p class = "fw-bold text-dark fs-5">$ <%= payment.amount %></p>
+
+        </div>
         <div class="d-flex align-items-baseline gap-2 ">
         <i class="fa fa-calendar" aria-hidden="true"></i>
         <p><%= payment.created_at.to_date.strftime('%Y %b %d') %> at <%= payment.created_at.to_time.strftime('%H:%M:%S') %></p>
         </div>
-        <div>
-          <p class = "fw-bold text-dark fs-5">$ <%= payment.amount %></p>
-        </div>
+        
          
        </div>
-      <% end %>
   <% end %>
 </div>
   </div>
-  <div class="d-flex justify-content-between container">
+  <div class="d-flex justify-content-between container mt-5">
     <p class = "fw-bold text-secondary fs-5">TOTAL PAYMENT</p>
     <p class = "fw-bold text-dark fs-5">$ <%= @total %></p>
   </div>
   <div class="my-5 d-flex justify-content-center">
     <%= link_to "New transaction", new_group_payment_path(@group), class: "btn btn-primary" %>
-  </div>
-  <div>
-    <%= link_to "Back to groups", groups_path %>
   </div>
   </div>
 </div>
