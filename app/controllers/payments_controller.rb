@@ -1,5 +1,5 @@
 class PaymentsController < ApplicationController
-  before_action :set_payment, only: %i[ show edit update destroy ]
+  before_action :set_payment, only: %i[show edit update destroy]
 
   # GET /payments/new
   def new
@@ -25,7 +25,7 @@ class PaymentsController < ApplicationController
 
     respond_to do |format|
       if @payment.save
-        format.html { redirect_to group_url(@group), notice: "Payment was successfully created." }
+        format.html { redirect_to group_url(@group), notice: 'Payment was successfully created.' }
         format.json { render :show, status: :created, location: @payment }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -35,17 +35,18 @@ class PaymentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_payment
-      @payment = Payment.find(params[:id])
-    end
 
-     def group_params
-      params.require(:payment).permit(groups: [])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_payment
+    @payment = Payment.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def payment_params
-      params.require(:payment).permit(:name, :amount)
-    end
+  def group_params
+    params.require(:payment).permit(groups: [])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def payment_params
+    params.require(:payment).permit(:name, :amount)
+  end
 end
