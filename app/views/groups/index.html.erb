@@ -1,0 +1,23 @@
+<%= render "layouts/nav" %>
+<div id="categories" class="container bg-light">
+    <% @groups.each do |category| %>
+      <%= link_to group_path(category.id), class: "text-decoration-none" do %>
+        <div class="container bg-white mt-4 shadow-lg p-3 mb-5 rounded">
+          <div class="row">
+            <div id="img-div" class="col"><img src=<%= category.icon%> alt=<%= category.name%> /></div>
+            <div class="col">
+              <p class = "fw-bold text-secondary fs-5 opacity-75"><%= category.name %><p>
+              <p class = "fw-light text-secondary"><%= category.created_at.to_date.strftime('%Y %b %d') %></p>
+            </div>
+            <div class="col d-flex justify-content-end">
+              <p class = "fw-bold text-dark fs-5">$<%= category.payments.sum(:amount) %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="mt-3 mb-5 d-flex justify-content-center">
+    <%= link_to "New category", new_group_path, class: "btn btn-primary" %>
+  </div>
+  

@@ -1,0 +1,59 @@
+.top-nav {
+  background-color: #3778c2;
+  top: 0;
+  position: sticky;
+}
+
+.fa-search {
+  font-weight: 400;
+}
+
+.field-input {
+  border: none;
+  outline: none;
+  width: 100vw;
+  padding: 1rem 1.5rem;
+  font-size: 1.8rem;
+}
+
+.field-submit {
+  border: none;
+  outline: none;
+  padding: 1rem 0;
+  font-size: 1.8rem;
+  background-color: #3778c2;
+  color: #fff;
+}
+
+.nav-btn {
+  border: none;
+  background-color: inherit;
+  color: #fff;
+  font-size: 1.8rem;
+  opacity: 0.6;
+  font-weight: 400;
+}
+
+.nav-btn:focus,
+.nav-btn:hover {
+  opacity: 1;
+}
+
+.sign-out-btn:hover,
+.sign-out-btn:focus {
+  background-color: red;
+}
+
+@media (max-width: 592px) {
+  .nav-btn {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    font-weight: 300;
+  }
+
+  .rapport {
+    font-size: 1rem;
+    font-weight: 300;
+    color: red;
+  }
+}

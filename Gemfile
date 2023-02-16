@@ -52,7 +52,16 @@ gem 'bootsnap', require: false
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 # Integrate SassC-Ruby into Rails
-gem "sassc-rails", "~> 2.1"
+gem 'sassc-rails', '~> 2.1'
+
+# Flexible authentication solution for Rails with Warden
+gem 'devise'
+
+# Font-Awesome SASS
+gem 'font-awesome-sass', '~> 6.3.0'
+
+# Bundle and transpile JavaScript in Rails with esbuild, rollup.js, or Webpack.
+gem 'jsbundling-rails', '~> 1.1'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -63,6 +72,9 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
+
+  # help to kill N+1 queries and unused eager loading.
+  gem 'bullet'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"

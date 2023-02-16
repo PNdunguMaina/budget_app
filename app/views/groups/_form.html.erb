@@ -1,0 +1,29 @@
+<%= form_with(model: group) do |form| %>
+  <% if group.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+      <ul>
+        <% group.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="container my-5">
+    <div class="field form-group">
+      <%= form.label "Name", class: "col-sm-2 col-form-label" %>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label "Icon", class: "col-sm-2 col-form-label" %>
+      <%= form.text_field :icon, class: "form-control" %>
+    </div>
+
+    <div class="mt-5 d-flex justify-content-center">
+      
+      <%= form.submit %>
+    </div>
+  </div>
+<% end %>

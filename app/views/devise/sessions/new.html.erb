@@ -1,0 +1,25 @@
+<%= render "devise/shared/nav", title: 'LOGIN', info: '' %>
+<div class="max-vh-100">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field mt-3">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "field-input mb-1" %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "field-input" %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field mt-4 mx-3 mb-3">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+
+    <div class="actions d-flex justify-content-center">
+      <%= f.submit "Log in", class: "field-submit btn px-4 py-2 my-4" %>
+    </div>
+  <% end %>
+
+<%= render "devise/shared/links" %>
+</div>

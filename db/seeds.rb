@@ -7,13 +7,13 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # users
-users = User.create([{name: 'John Doe'}, {name: 'Felix Oduor'}])
+@users = User.create([{name: 'John Doe', email: 'johndoe@example.com', password: 'pattohoh'}, {name: 'Felix Oduor', email: 'felixoduor@example.com', password: 'pattohoh'}])
 
 # payments
-payment_1 = Payment.create(name: 'YTFGJKBVGFHJ876FBNUYTYFV', amount: 52, author_id: 2)
+@payments = Payment.create([{name: 'YTFGJKBVGFHJ876FBNUYTYFV', amount: 52, author_id: 1}, {name: 'RTYFR88FDUHJSIURNFII9', amount: 84, author_id: 1}, {name: 'RTYUWEUI887DFNIUUIFDK', amount: 42, author_id: 1}])
 
 # Groups
-group_1 = Group.create(name: 'McDonalds', icon: 'https://www.mcdonalds.com/content/dam/sites/usa/nfl/icons/arches-logo_108x108.jpg', author_id: 1)
+@groups = Group.create([{name: 'McDonalds', icon: 'https://www.mcdonalds.com/content/dam/sites/usa/nfl/icons/arches-logo_108x108.jpg', author_id: 1}, {name: 'BrookSide', icon: 'https://www.brookside.co.ke/images/logo.png', author_id: 1}])
 
 # GroupPayments
-group_payment = GroupPayment.create(group: group_1, payment: payment_1)
+# @group_payment = GroupPayment.create(group: @groups.id, payment: @payments.id)

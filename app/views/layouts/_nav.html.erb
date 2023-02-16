@@ -1,0 +1,32 @@
+<div class="top-nav py-4">
+<div class="container top">
+  <div class="row">
+  <div class="col">
+   <button class="navbar-toggler ms-auto text-white" type="button" data-mdb-toggle="collapse"
+      data-mdb-target="#navbarToggleExternalContent3" aria-controls="navbarToggleExternalContent3"
+      aria-expanded="true" aria-label="Toggle navigation">
+      <i class="fas fa-bars fs-1"></i>
+    </button>
+    </div>
+    <div class="col">
+    <h1 class="text-white">TRANSACTIONS</h1>
+    </div>
+    <div class="col justify-content-end d-flex">
+   <div>
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-btn sign-out-btn" %> 
+    </div>
+  	
+    </div>
+  </div>
+  </div>
+  
+  <div class="d-flex justify-content-around mt-3 mb-3">
+   <div class="d-flex  align-items-center text-white fs-3 fw-bold"> Welcome, <%= current_user.name %> </div>
+   <div class="gap-3 d-flex">
+      <button class="nav-btn">Most Recent</button>
+      <button class="nav-btn">Most Ancient</button>
+    </div>
+    
+  </div>
+ 
+  </div>
