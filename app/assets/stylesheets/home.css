@@ -20,11 +20,11 @@ body {
 
 .register-btn {
   background-color: inherit;
-  color: #434b54
+  color: #434b54;
 }
 
 .register-btn:hover {
-    background-color: rgb(92, 184, 92);
+  background-color: rgb(92, 184, 92);
 }
 
 img {
