@@ -8,7 +8,3 @@ services:
     buildCommand: bundle install --without development:test
     startCommand: bundle exec rails server -p $PORT
     healthCheckPath: /healthcheck
-    httpPort: 8080
-    instanceCount: 1
-    workingDirectory: /app
-    
