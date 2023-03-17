@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/missions', to: 'missions#get_missions'
+  resources :missions
   
   resources :groups, only: [:index, :show, :new, :create] do
     resources :payments, only: [:new, :create]

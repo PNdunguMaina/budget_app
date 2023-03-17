@@ -1,0 +1,22 @@
+<h1>Missions</h1>
+<table class="table table-hover">
+
+  <thead class="thead-dark">
+    <tr>
+      <th>Mission</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @res.each do |mission| %>
+    <tr>
+        <td><%= mission['mission_name'] %></td>
+        <td><%= mission['description'] %></td>
+      </tr><br><br>
+<%end%>
+  </tbody>
+
+</table>
+
+
