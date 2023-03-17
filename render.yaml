@@ -1,6 +1,6 @@
 databases:
   - name: mysite
-    databaseName: mysite
+    databaseName: budget_app
     user: mysite
     plan: free
 
@@ -14,7 +14,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: budget_app
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
