@@ -6,7 +6,7 @@ databases:
 
 services:
   - type: web
-    name: budgetapp
+    name: budget
     plan: free
     env: ruby
     buildCommand: "./bin/render-build.sh"
