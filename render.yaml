@@ -1,7 +1,6 @@
 databases:
   - name: budgetapp
-    databaseName: budgetapp
-    user: budgetapp
+    ipAllowList: []
     plan: free
 
 services:
@@ -10,7 +9,7 @@ services:
     plan: free
     env: ruby
     buildCommand: "./bin/render-build.sh"
-    startCommand: "bundle exec puma -C config/puma.rb"
+    startCommand: bundle exec rails s
     envVars:
       - key: DATABASE_URL
         fromDatabase:
