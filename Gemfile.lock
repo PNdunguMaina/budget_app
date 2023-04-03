@@ -312,7 +312,7 @@ DEPENDENCIES
   rubocop (>= 1.0, < 2.0)
   sassc-rails (~> 2.1)
   selenium-webdriver
-  sprockets-rails
+  sprockets-rails (~> 3.4)
   stimulus-rails
   turbo-rails
   tzinfo-data
