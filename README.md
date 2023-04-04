@@ -96,8 +96,7 @@ After you're finished please remove all the comments and instructions!
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-
-- Click [here](https://rails-dm6g.onrender.com/) to go live.
+- Click <a href="https://budget-app-2zrr.onrender.com/" target="_blank">here</a> to go live.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
