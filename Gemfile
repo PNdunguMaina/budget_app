@@ -7,7 +7,7 @@ ruby '3.1.2'
 gem 'rails', '~> 7.0.4'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem 'sprockets-rails'
+gem 'sprockets-rails', '~> 3.4'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
@@ -63,8 +63,6 @@ gem 'font-awesome-sass', '~> 6.3.0'
 # Bundle and transpile JavaScript in Rails with esbuild, rollup.js, or Webpack.
 gem 'jsbundling-rails', '~> 1.1'
 
-
-
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
@@ -91,5 +89,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
-gem "rest-client", "~> 2.1"
